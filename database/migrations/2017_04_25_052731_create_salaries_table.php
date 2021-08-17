@@ -19,10 +19,11 @@ class CreateSalariesTable extends Migration
             $table->integer('staff_id');
             $table->date('salary_date');
             $table->string('salary_month');
+            $table->string('salary_week');
             $table->integer('salary_paid');
-            
             $table->timestamps();
         });
+        \Illuminate\Support\Facades\DB::statement("ALTER TABLE salaries AUTO_INCREMENT = 100001;");
     }
 
     /**

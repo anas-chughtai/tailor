@@ -306,6 +306,23 @@
 
 @endif
 
+@if(Session::has('message'))
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.toast({
+                heading: 'Error'
+                , text: '{{ Session::get("message") }}'
+                , position: 'top-right'
+                , loaderBg: '#ff6849'
+                , icon: 'info'
+                , hideAfter: 9500
+                , stack: 6
+            })
+        });
+    </script>
+
+@endif
+
 @if(Session::has('alert'))
     <script type="text/javascript">
         $(document).ready(function () {

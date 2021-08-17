@@ -24,6 +24,12 @@ class CustomerController extends Controller
 
     public function store(Request $request)
     {
+        $check = Customer::where('phone', $request->phone)->first();
+        if ($check){
+            Session::flash('message', 'Customer phone number already exist. Please enter a unique phone number');
+            return redirect('customers/create');
+        }
+
         $customer = new Customer($request->all());
 
         if ($customer->save()) {
@@ -61,7 +67,7 @@ class CustomerController extends Controller
             return redirect('customers');
         } else {
             Session::flash('alert', 'Customer was not successfully updated');
-            return redirect('customers/edit');
+            return redirect(route('customers.edit',  $id ));
         }
     }
 

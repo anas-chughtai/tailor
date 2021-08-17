@@ -10,35 +10,24 @@ use Illuminate\Support\Facades\Session;
 
 class StaffController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $staffs = Staff::all()->where('staff_delete', '0');
         return view('staff/index')->with('staffs', $staffs);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('staff/create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
+        $check = Staff::where('staff_phone', $request->staff_phone)->first();
+        if ($check){
+            Session::flash('message', 'Staff phone number already exist. Please enter a unique phone number');
+            return redirect('staffs/create');
+        }
         $staff = new Staff($request->all());
 
         if($staff->save())
@@ -52,12 +41,6 @@ class StaffController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $staff = Staff::find($id);
@@ -65,25 +48,12 @@ class StaffController extends Controller
         return view('staff/show')->with('staff', $staff)->with('staff_salary', $staff_salary);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $staff = Staff::find($id);
         return view('staff/edit')->with('staff', $staff);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $staff = Staff::find($id);

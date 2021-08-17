@@ -63,6 +63,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
+                                            <label class="col-md-12">Month</label>
+                                            <div class="col-md-12">
+                                                {!! Form::select('salary_week', array( 'Week 1' => 'Week 1', 'Week 2' => 'Week 2', 'Week 3' => 'Week 3', 'Week 4' => 'Week 4'), null, ['class'=>'form-control','required']) !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
                                             <label class="col-md-12">Salary Paid</label>
                                             <div class="col-md-12">
                                                 {!! Form::number('salary_paid', '', ['class'=>'form-control', 'placeholder'=>'ENTER PAID AMMOUNT','required']) !!}
