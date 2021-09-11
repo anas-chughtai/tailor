@@ -63,6 +63,12 @@ class SizeController extends Controller
         return view('sizes.edit.kameez_shalwar', compact('kameez_shalwar'));
     }
 
+    public function kameez_shalwar_print($id)
+    {
+        $kameez_shalwar = KameezShalwar::find($id);
+        return view('sizes.print.kameez_shalwar', compact('kameez_shalwar'));
+    }
+
     public function kameez_shalwar_update(Request $request, $id)
     {
         $kameez_shalwar = KameezShalwar::find($id);
@@ -96,6 +102,12 @@ class SizeController extends Controller
     {
         $kameez_trouser = KameezTrouser::find($id);
         return view('sizes.edit.kameez_trouser', compact('kameez_trouser'));
+    }
+
+    public function kameez_trouser_print($id)
+    {
+        $kameez_trouser = KameezTrouser::find($id);
+        return view('sizes.print.kameez_trouser', compact('kameez_trouser'));
     }
 
     public function kameez_trouser_update(Request $request, $id)
@@ -133,6 +145,12 @@ class SizeController extends Controller
         return view('sizes.edit.shirt', compact('shirt'));
     }
 
+    public function shirt_print($id)
+    {
+        $shirt = Shirt::find($id);
+        return view('sizes.print.shirt', compact('shirt'));
+    }
+
     public function shirt_update(Request $request, $id)
     {
         $shirt = Shirt::find($id);
@@ -166,6 +184,12 @@ class SizeController extends Controller
     {
         $two_piece = KameezShalwar::find($id);
         return view('sizes.edit.two_piece', compact('two_piece'));
+    }
+
+    public function two_piece_print($id)
+    {
+        $two_piece = KameezShalwar::find($id);
+        return view('sizes.print.two_piece', compact('two_piece'));
     }
 
     public function two_piece_update(Request $request, $id)
@@ -203,6 +227,12 @@ class SizeController extends Controller
         return view('sizes.edit.three_piece', compact('three_piece'));
     }
 
+    public function three_piece_print($id)
+    {
+        $three_piece = ThreePiece::find($id);
+        return view('sizes.print.three_piece', compact('three_piece'));
+    }
+
     public function three_piece_update(Request $request, $id)
     {
         $three_piece = ThreePiece::find($id);
@@ -236,6 +266,12 @@ class SizeController extends Controller
     {
         $waist_coat = WaistCoat::find($id);
         return view('sizes.edit.waist_coat', compact('waist_coat'));
+    }
+
+    public function waist_coat_print($id)
+    {
+        $waist_coat = WaistCoat::find($id);
+        return view('sizes.print.waist_coat', compact('waist_coat'));
     }
 
     public function waist_coat_update(Request $request, $id)
@@ -273,6 +309,12 @@ class SizeController extends Controller
         return view('sizes.edit.sherwani', compact('sherwani'));
     }
 
+    public function sherwani_print($id)
+    {
+        $sherwani = Sherwani::find($id);
+        return view('sizes.print.sherwani', compact('sherwani'));
+    }
+
     public function sherwani_update(Request $request, $id)
     {
         $sherwani = Sherwani::find($id);
@@ -306,6 +348,12 @@ class SizeController extends Controller
     {
         $coat = Coat::find($id);
         return view('sizes.edit.coat', compact('coat'));
+    }
+
+    public function coat_print($id)
+    {
+        $coat = Coat::find($id);
+        return view('sizes.print.coat', compact('coat'));
     }
 
     public function coat_update(Request $request, $id)
@@ -343,6 +391,12 @@ class SizeController extends Controller
         return view('sizes.edit.prince_coat', compact('prince_coat'));
     }
 
+    public function prince_coat_print($id)
+    {
+        $prince_coat = PrinceCoat::find($id);
+        return view('sizes.print.prince_coat', compact('prince_coat'));
+    }
+
     public function prince_coat_update(Request $request, $id)
     {
         $prince_coat = PrinceCoat::find($id);
@@ -378,6 +432,12 @@ class SizeController extends Controller
         return view('sizes.edit.safari_suite', compact('safari_suite'));
     }
 
+    public function safari_suite_print($id)
+    {
+        $safari_suite = SafariSuite::find($id);
+        return view('sizes.print.safari_suite', compact('safari_suite'));
+    }
+
     public function safari_suite_update(Request $request, $id)
     {
         $safari_suite = SafariSuite::find($id);
@@ -411,6 +471,12 @@ class SizeController extends Controller
     {
         $pant = Pant::find($id);
         return view('sizes.edit.pant', compact('pant'));
+    }
+
+    public function pant_print($id)
+    {
+        $pant = Pant::find($id);
+        return view('sizes.print.pant', compact('pant'));
     }
 
     public function pant_update(Request $request, $id)

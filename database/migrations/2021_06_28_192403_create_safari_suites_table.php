@@ -15,6 +15,7 @@ class CreateSafariSuitesTable extends Migration
     {
         Schema::create('safari_suites', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('cus_name')->nullable();
             $table->string('length')->nullable();
             $table->string('shoulder')->nullable();
             $table->string('arm')->nullable();

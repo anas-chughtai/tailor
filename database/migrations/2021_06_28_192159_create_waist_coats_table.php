@@ -15,8 +15,9 @@ class CreateWaistCoatsTable extends Migration
     {
         Schema::create('waist_coats', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('neck')->nullable();
+            $table->string('cus_name')->nullable();
             $table->string('length')->nullable();
+            $table->string('neck')->nullable();
             $table->string('shoulder')->nullable();
             $table->string('chest')->nullable();
             $table->string('belly')->nullable();

@@ -15,6 +15,7 @@ class CreatePantsTable extends Migration
     {
         Schema::create('pants', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('cus_name')->nullable();
             $table->string('waist')->nullable();
             $table->string('length')->nullable();
             $table->string('hip')->nullable();

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shirt extends Model
 {
-    protected $fillable = ['length', 'shoulder', 'arm', 'cuff', 'collar_style', 'chest', 'belly', 'hip', 'design'];
+    protected $fillable = ['cus_name', 'length', 'shoulder', 'arm', 'cuff', 'collar_style', 'chest', 'belly', 'hip', 'design'];
 }
